@@ -27,3 +27,10 @@ and click on the controller links to access the operations and interact with the
 ## Postman collection
 
 Is possible to see the Postman collection of requests inside the folder **postman**.
+
+## Future things to add
+
+Custom error payload
+HATEOAS
+Spring security to apply authentication and authorization
+Documentation via tests with Ascii-doctor
