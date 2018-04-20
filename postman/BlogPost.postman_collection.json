@@ -1,0 +1,106 @@
+{
+	"variables": [],
+	"info": {
+		"name": "BlogPost",
+		"_postman_id": "cda848a9-1b4b-f6a2-dd5a-de4d059e4ede",
+		"description": "Calls to Blog API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/blog/posts",
+			"request": {
+				"url": "http://localhost:8080/blog/posts",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/blog/posts/1",
+			"request": {
+				"url": "http://localhost:8080/blog/posts/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/blog/posts",
+			"request": {
+				"url": "http://localhost:8080/blog/posts",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Post 13\",\n    \"description\": \"Post 13 description\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/blog/posts/1",
+			"request": {
+				"url": "http://localhost:8080/blog/posts/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/blog/posts/1000",
+			"request": {
+				"url": "http://localhost:8080/blog/posts/1000",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/blog/posts",
+			"request": {
+				"url": "http://localhost:8080/blog/posts",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/blog/posts/2",
+			"request": {
+				"url": "http://localhost:8080/blog/posts/2",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Post 2 - updated\",\n    \"description\": \"Post 2 description - updated\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

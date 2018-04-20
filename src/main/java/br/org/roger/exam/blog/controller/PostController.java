@@ -5,6 +5,7 @@ import br.org.roger.exam.blog.exception.PostNotFoundException;
 import br.org.roger.exam.blog.model.Post;
 import br.org.roger.exam.blog.model.json.PostJson;
 import br.org.roger.exam.blog.service.PostService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,9 @@ public class PostController {
     @Autowired
     private PostService postService;
 
+    @ApiOperation(
+            value = "Returns all posts from users",
+            nickname = "findAll")
     @RequestMapping(value = "/posts", method = RequestMethod.GET)
     public ResponseEntity<List<PostJson>> findAll() {
 
@@ -37,6 +41,9 @@ public class PostController {
         }
     }
 
+    @ApiOperation(
+            value = "Returns one Post with the given id",
+            nickname = "findById")
     @RequestMapping(value = "/posts/{id}", method = RequestMethod.GET)
     public ResponseEntity<PostJson> findById(@PathVariable final Long id) {
 
@@ -48,6 +55,9 @@ public class PostController {
 
     }
 
+    @ApiOperation(
+            value = "Creates one Post with the data in the payload",
+            nickname = "create")
     @RequestMapping(value = "/posts", method = RequestMethod.POST)
     public ResponseEntity<PostJson> create(@RequestBody final PostJson postJson) {
 
@@ -60,6 +70,9 @@ public class PostController {
 
     }
 
+    @ApiOperation(
+            value = "Updates one Post with the data in the payload",
+            nickname = "update")
     @RequestMapping(value = "/posts/{id}", method = RequestMethod.PUT)
     public ResponseEntity<PostJson> update(@PathVariable final Long id,
                                            @RequestBody final PostJson postJson) {
@@ -75,6 +88,9 @@ public class PostController {
 
     }
 
+    @ApiOperation(
+            value = "Deletes one Post with the given id",
+            nickname = "deleteOne")
     @RequestMapping(value = "/posts/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<?> deleteOne(@PathVariable final Long id) {
         try {
@@ -85,6 +101,9 @@ public class PostController {
         }
     }
 
+    @ApiOperation(
+            value = "Deletes all Posts entered by the users",
+            nickname = "deleteAll")
     @RequestMapping(value = "/posts", method = RequestMethod.DELETE)
     public ResponseEntity<?> deleteAll() {
         try {
