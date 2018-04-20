@@ -30,7 +30,7 @@ Is possible to see the Postman collection of requests inside the folder **postma
 
 ## Future things to add
 
-Custom error payload
-HATEOAS
-Spring security to apply authentication and authorization
-Documentation via tests with Ascii-doctor
+* Custom error payload
+* HATEOAS
+* Spring security to apply authentication and authorization
+* Documentation via tests with Ascii-doctor
