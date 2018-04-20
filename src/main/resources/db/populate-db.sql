@@ -1,0 +1,11 @@
+INSERT INTO post (id, title, description, created_at, updated_at) values (1, 'Post 1', 'Post 1 description', CURRENT_TIMESTAMP, null);
+INSERT INTO post (id, title, description, created_at, updated_at) values (2, 'Post 2', 'Post 2 description', CURRENT_TIMESTAMP, null);
+INSERT INTO post (id, title, description, created_at, updated_at) values (3, 'Post 3', 'Post 3 description', CURRENT_TIMESTAMP, null);
+INSERT INTO post (id, title, description, created_at, updated_at) values (4, 'Post 4', 'Post 4 description', CURRENT_TIMESTAMP, null);
+INSERT INTO post (id, title, description, created_at, updated_at) values (5, 'Post 5', 'Post 5 description', CURRENT_TIMESTAMP, null);
+INSERT INTO post (id, title, description, created_at, updated_at) values (6, 'Post 6', 'Post 6 description', CURRENT_TIMESTAMP, null);
+INSERT INTO post (id, title, description, created_at, updated_at) values (7, 'Post 7', 'Post 7 description', CURRENT_TIMESTAMP, null);
+INSERT INTO post (id, title, description, created_at, updated_at) values (8, 'Post 8', 'Post 8 description', CURRENT_TIMESTAMP, null);
+INSERT INTO post (id, title, description, created_at, updated_at) values (9, 'Post 9', 'Post 9 description', CURRENT_TIMESTAMP, null);
+INSERT INTO post (id, title, description, created_at, updated_at) values (10, 'Post 10', 'Post 10 description', CURRENT_TIMESTAMP, null);
+INSERT INTO post (id, title, description, created_at, updated_at) values (11, 'Post 11', 'Post 11 description', CURRENT_TIMESTAMP, null);
