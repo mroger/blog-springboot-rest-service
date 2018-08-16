@@ -3,7 +3,9 @@ package br.org.roger.exam.blog.model.json;
 import br.org.roger.exam.blog.exception.PostArgumentNotValidException;
 import br.org.roger.exam.blog.model.Post;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -14,11 +16,20 @@ import java.util.stream.Collectors;
  * @author Marcos (mroger.oliveira@gmail.com)
  *
  */
+// https://docs.jboss.org/hibernate/validator/5.1/reference/en-US/html/chapter-message-interpolation.html#section-interpolation-with-message-expressions
+// https://g00glen00b.be/validating-the-input-of-your-rest-api-with-spring/
+// https://dzone.com/articles/implementing-validation-for-restful-services-with
 public class PostJson {
 
     private Long id;
+    @NotNull(message = "blog.post.request.title.notnull")
     private String title;
+    @NotNull(message = "blog.post.request.description.notnull")
+    @Size(min=5, message = "{blog.post.request.description.size}")
     private String description;
+    //Só para testar validacao
+    @Min(value = 350, message = "{blog.post.request.priceperview.min}")
+    private double pricePerView;
     private Date publishedAt;
     private Date updatedAt;
 
@@ -73,6 +84,14 @@ public class PostJson {
         this.updatedAt = updatedAt;
     }
 
+    public double getPricePerView() {
+        return pricePerView;
+    }
+
+    public void setPricePerView(double pricePerView) {
+        this.pricePerView = pricePerView;
+    }
+
     public static PostJson fromModel(Post post) {
         return new PostJson(post.getId(), post.getTitle(), post.getDescription(), post.getPublishedAt(), post.getUpdatedAt());
     }
@@ -88,7 +107,7 @@ public class PostJson {
 
     public Post updateModel(Post p) {
         if (this.getTitle() == null || this.getDescription() == null) {
-            throw new PostArgumentNotValidException();
+            throw new PostArgumentNotValidException("Title and description are required");
         }
         p.setTitle(this.getTitle());
         p.setDescription(this.getDescription());
@@ -98,7 +117,7 @@ public class PostJson {
 
     public Post createModel() {
         if (this.getTitle() == null || this.getDescription() == null) {
-            throw new PostArgumentNotValidException();
+            throw new PostArgumentNotValidException("Title and description are required");
         }
         return new Post(this.getTitle(), this.getDescription(), new Date());
 
