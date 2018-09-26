@@ -53,10 +53,8 @@ public class PostController {
     public Resource<PostJson> findById(@PathVariable final Long id) {
 
         PostJson postJson = postService.findById(id)
-            .map(post -> {
-                return PostJson.fromModel(post);
-            })
-            .orElseThrow(() -> new PostNotFoundException());
+            .map(PostJson::fromModel)
+            .orElseThrow(PostNotFoundException::new);
 
         Resource<PostJson> postResource = new Resource<PostJson>(postJson);
         ControllerLinkBuilder linkTo = linkTo(methodOn(this.getClass()).findAll());
